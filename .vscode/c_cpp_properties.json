@@ -1,0 +1,36 @@
+{
+    "env": {
+        "myDefaultIncludePath": [
+            "${workspaceFolder}",
+            "${workspaceFolder}/include",
+            "${workspaceFolder}/vendor/butano/butano/include",
+            "/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/include/c++/10.2.0",
+            "/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/include/c++/10.2.0/arm-none-eabi",
+            "/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/include/c++/10.2.0/backward",
+            "/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/10.2.0/include",
+            "/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/10.2.0/include-fixed",
+            "/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/include"
+        ]
+    },
+    "configurations": [
+      {
+        "name": "Butano",
+        "intelliSenseMode": "clang-x64",
+        "includePath": ["${myDefaultIncludePath}"],
+        "defines": [],
+        // "forcedInclude": ["${workspaceFolder}/include/config.h"],
+        "compilerPath": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++",
+        "cStandard": "c11",
+        "cppStandard": "c++17"
+        // "compileCommands": "/path/to/compile_commands.json",
+        /*"browse": {
+          "path": ["${workspaceFolder}"],
+          "limitSymbolsToIncludedHeaders": true,
+          "databaseFilename": ""
+        }*/
+      }
+    ],
+    "version": 4
+  }
+  
+  

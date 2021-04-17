@@ -1,0 +1,3 @@
+[submodule "vendor/butano"]
+	path = vendor/butano
+	url = git@github.com:GValiente/butano.git
