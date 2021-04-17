@@ -12,9 +12,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          submodules: recursive
+
+      - name: Save Me plz
+        run: |
+          pwd
+          ls -la
 
       - name: Build GBA rom
         run: |
