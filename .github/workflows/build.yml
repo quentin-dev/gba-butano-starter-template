@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: Install devkitPro GBA
         run: |
+          sudo apt update && sudo apt install gdebi -y
           wget -O dkp-pacman.deb https://github.com/devkitPro/pacman/releases/download/v1.0.2/devkitpro-pacman.amd64.deb
           sudo gdebi dkp-pacman.deb
           sudo dkp-pacman -Syu --no-confirm gba-dev
