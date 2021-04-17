@@ -10,8 +10,10 @@ jobs:
     container: devkitpro/devkitarm:20200730
 
     steps:
-      - name: Checkout w/ submodules
+      - name: Checkout
         uses: actions/checkout@v2.3.1
+
+      - name: Fetch Butano submodule
         run: |
           git submodule update --init
 
