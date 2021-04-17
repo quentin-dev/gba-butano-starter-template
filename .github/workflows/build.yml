@@ -10,6 +10,10 @@ jobs:
     container: devkitpro/devkitarm:20200730
 
     steps:
+      - name: Update everything
+        run: |
+          sudo dkp-pacman -Syu --noconfirm
+
       - name: Checkout
         uses: actions/checkout@v2
 

@@ -15,7 +15,7 @@
     "configurations": [
       {
         "name": "Butano",
-        "intelliSenseMode": "clang-x64",
+        "intelliSenseMode": "gcc-arm",
         "includePath": ["${myDefaultIncludePath}"],
         "defines": [],
         // "forcedInclude": ["${workspaceFolder}/include/config.h"],
