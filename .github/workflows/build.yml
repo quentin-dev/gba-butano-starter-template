@@ -12,10 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.1
-
-      - name: Fetch Butano submodule
-        run: |
-          git submodule update --init
+        with:
+          submodules: recursive
 
       - name: Build GBA rom
         run: |
