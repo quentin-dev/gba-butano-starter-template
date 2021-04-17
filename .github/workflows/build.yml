@@ -15,8 +15,7 @@ jobs:
 
       - name: Save Me plz
         run: |
-          pwd
-          ls -la
+          git submodule update --init
 
       - name: Build GBA rom
         run: |
