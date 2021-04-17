@@ -10,9 +10,9 @@ jobs:
     container: devkitpro/devkitarm:20200730
 
     steps:
-      - name: Update everything
+      - name: Update git
         run: |
-          sudo dkp-pacman -Syu --noconfirm
+          sudo apt update && sudo apt install git -y
 
       - name: Checkout
         uses: actions/checkout@v2
