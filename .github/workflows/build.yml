@@ -7,21 +7,14 @@ on:
 jobs:
   build-rom:
     runs-on: ubuntu-latest
+    container: devkitpro/devkitarm:20200730
+
     steps:
-      - name: Install devkitPro GBA
-        run: |
-          sudo apt update && sudo apt install gdebi -y
-          wget -O dkp-pacman.deb https://github.com/devkitPro/pacman/releases/download/v1.0.2/devkitpro-pacman.amd64.deb
-          sudo gdebi --non-interactive dkp-pacman.deb
-          sudo dkp-pacman -Syu --no-confirm gba-dev
-
-      - name: Checkout
+      - name: Checkout w/ submodules
         uses: actions/checkout@v2.3.1
-      
-      - name: Get Butano submodule
-        run : |
-          git submodule update --init
+        with:
+          submodules: true
 
-      - name: Build rom
+      - name: Build GBA rom
         run: |
           make -j$(nproc)
