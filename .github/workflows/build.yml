@@ -7,19 +7,22 @@ on:
 jobs:
   build-rom:
     runs-on: ubuntu-latest
-    container: devkitpro/devkitarm:20200730
+    container: sunbr0/gba_img:7e5b2b37
 
     steps:
-      - name: Update git
-        run: |
-          sudo apt update && sudo apt install git -y
 
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Save Me plz
+      - name: Remove Butano submodule
         run: |
-          git submodule update --init
+          sudo rm -rf vendor/butano
+
+      - name: Checkout Butano repo
+        uses: actions/checkout@v2
+        with:
+          repository: GValiente/butano
+          path: vendor/butano
 
       - name: Build GBA rom
         run: |
