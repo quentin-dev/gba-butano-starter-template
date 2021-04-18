@@ -3,6 +3,7 @@
         "myDefaultIncludePath": [
             "${workspaceFolder}",
             "${workspaceFolder}/include",
+            "${workspaceFolder}/build",
             "${workspaceFolder}/vendor/butano/butano/include",
             "/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/include/c++/10.2.0",
             "/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/include/c++/10.2.0/arm-none-eabi",
