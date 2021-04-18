@@ -1,10 +1,13 @@
 #include "bn_core.h"
 #include "bn_bg_palettes.h"
 #include "bn_sprite_ptr.h"
+#include "bn_keypad.h"
 #include "bn_sprite_text_generator.h"
+#include "bn_sprite_animate_actions.h"
 #include "bn_vector.h"
 
 #include "gj_big_sprite_font.h"
+#include "bn_sprite_items_ninja.h"
 
 int main()
 {
@@ -19,8 +22,24 @@ int main()
 
     text_generator.generate(0, -20, "Bzioup", text_sprites);
 
+    bn::sprite_ptr ninja_sprite = bn::sprite_items::ninja.create_sprite(0, 0);
+    bn::sprite_animate_action<4> action = bn::create_sprite_animate_action_forever(
+                    ninja_sprite, 16, bn::sprite_items::ninja.tiles_item(), 0, 1, 2, 3);
+
     while(true)
     {
+
+        if (bn::keypad::right_held())
+        {
+            ninja_sprite.set_x(ninja_sprite.x() + 1);
+        }
+
+        if (bn::keypad::left_held())
+        {
+            ninja_sprite.set_x(ninja_sprite.x() - 1);
+        }
+
         bn::core::update();
+        action.update();
     }
 }
