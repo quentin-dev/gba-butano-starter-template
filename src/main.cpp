@@ -8,6 +8,7 @@
 
 #include "gj_big_sprite_font.h"
 #include "bn_sprite_items_ninja.h"
+#include "bn_sprite_items_pipe.h"
 
 int main()
 {
@@ -24,7 +25,9 @@ int main()
 
     bn::sprite_ptr ninja_sprite = bn::sprite_items::ninja.create_sprite(0, 0);
     bn::sprite_animate_action<4> action = bn::create_sprite_animate_action_forever(
-                    ninja_sprite, 16, bn::sprite_items::ninja.tiles_item(), 0, 1, 2, 3);
+                    ninja_sprite, 16, bn::sprite_items::ninja.tiles_item(), 12, 13, 14, 15);
+
+    bn::sprite_ptr pipe_sprite = bn::sprite_items::pipe.create_sprite(10, 10);
 
     while(true)
     {
