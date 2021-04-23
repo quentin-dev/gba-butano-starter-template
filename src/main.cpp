@@ -33,6 +33,7 @@ int main()
                     ninja_sprite, 16, bn::sprite_items::ninja.tiles_item(), 12, 13, 14, 15);
 
     bn::sprite_ptr pipe_sprite = bn::sprite_items::pipe.create_sprite(10, 10);
+    pipe_sprite.set_scale(2);
 
     while(true)
     {
