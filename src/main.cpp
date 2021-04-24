@@ -21,22 +21,33 @@ int main()
     bn::regular_bg_ptr day_bg = bn::regular_bg_items::bg_day.create_bg(0, 0);
     day_bg.set_visible(true);
 
-    bn::sprite_text_generator text_generator(gj::big_sprite_font);
+    // bn::sprite_text_generator text_generator(gj::big_sprite_font);
 
-    text_generator.set_center_alignment();
-    bn::vector<bn::sprite_ptr, 32> text_sprites;
+    // text_generator.set_center_alignment();
+    // bn::vector<bn::sprite_ptr, 32> text_sprites;
 
-    text_generator.generate(0, -20, "Bzioup", text_sprites);
+    // text_generator.generate(0, -20, "Bzioup", text_sprites);
 
     bn::sprite_ptr ninja_sprite = bn::sprite_items::ninja.create_sprite(0, 0);
     bn::sprite_animate_action<4> action = bn::create_sprite_animate_action_forever(
                     ninja_sprite, 16, bn::sprite_items::ninja.tiles_item(), 12, 13, 14, 15);
 
-    bn::sprite_ptr pipe_sprite = bn::sprite_items::pipe.create_sprite(10, 10);
+    bn::sprite_ptr pipe_sprite = bn::sprite_items::pipe.create_sprite(0, 48);
     pipe_sprite.set_scale(2);
+
+    int gravity_cooldown = 0;
 
     while(true)
     {
+
+        // Apply gravity
+        if (gravity_cooldown == 0)
+        {
+            ninja_sprite.set_y(ninja_sprite.y() + 2);
+            gravity_cooldown = 4;
+        }
+
+        --gravity_cooldown;
 
         if (bn::keypad::right_held())
         {
@@ -46,6 +57,11 @@ int main()
         if (bn::keypad::left_held())
         {
             ninja_sprite.set_x(ninja_sprite.x() - 1);
+        }
+
+        if (bn::keypad::b_held())
+        {
+            ninja_sprite.set_y(ninja_sprite.y() - 1);
         }
 
         day_bg.set_x(day_bg.x() - 1);
