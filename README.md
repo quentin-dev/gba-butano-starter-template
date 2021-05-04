@@ -1,6 +1,6 @@
-# GBA JAM 2021
+# GBA Butano Starter Template
 
-This my entry for GBA Jam 2021, it currently does not have a name.
+This is a starter template to createa GBA game with Butano.
 
 ## Building the game
 
@@ -14,4 +14,4 @@ This project has the same requirements as [butano](https://github.com/GValiente/
 1. Clone the repo and `cd` into it
 2. `git submodule update --init`
 3. `make -j$(nproc)`
-4. Open `gbajam-2021.gba` with your favorite emulator and play!
+4. Open `gba-butano-starter-template.gba` with your favorite emulator and play!
