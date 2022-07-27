@@ -4,8 +4,6 @@
     {
       "name": "Butano",
       "includePath": [
-        "/usr/include",
-        "/usr/local/include",
         "${workspaceFolder}/include",
         "${workspaceFolder}/build",
         "${workspaceFolder}/vendor/butano/butano/include",
@@ -20,8 +18,6 @@
       "intelliSenseMode": "linux-gcc-arm",
       "browse": {
         "path": [
-          "/usr/include",
-          "/usr/local/include",
           "${workspaceFolder}/include",
           "${workspaceFolder}/vendor/butano/butano/include",
           "/opt/devkitpro/libgba/include",
