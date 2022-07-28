@@ -14,7 +14,7 @@
       "defines": [],
       "compilerPath": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++",
       "cStandard": "c11",
-      "cppStandard": "c++17",
+      "cppStandard": "c++20",
       "intelliSenseMode": "linux-gcc-arm",
       "browse": {
         "path": [
