@@ -7,12 +7,7 @@ on:
 jobs:
   build-rom:
     runs-on: ubuntu-latest
-<<<<<<< HEAD
-    container: sunbr0/gba_img:7e5b2b37
-
-=======
     container: sunbr0/gba-butano-base:4dd4b16
->>>>>>> 7726b58... update ci
     steps:
 
       - name: Checkout
